@@ -28,6 +28,10 @@ public class BalancedBrackets {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+                //If closing bracket is used before opening bracket, stop iterating and return false
+                if(brackets < 0){
+                    return false;
+                }
             }
         }
         return brackets == 0;
